@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bbs.mapper.boardMapper">
+
+	<select id="getBoardRowCount" resultType="java.lang.Integer">
+		select count(*)
+		from board
+		join user on board.user_no = user.user_no
+	</select>
+
+	<select id="getBoardList" resultType="boardVO">
+		select board.board_no, 
+				board.user_no, 
+				user.user_name,
+				board_category, 
+				board_title, 
+				board_content, 
+				board_price, 
+				board_sell_status, 
+				board_wdate, 
+				min(file_no), 
+				file_name, 
+				file_real_name, 
+				(select count(*) from comment where comment.board_no = board.board_no) as 'boardCommentCount'
+		from board 
+		join user on board.user_no = user.user_no 
+		join file on board.board_no = file.board_no
+		<where>
+			<choose>
+				<when test="boardCategory != null and searchKey == null">
+					board_category like CONCAT('%', #{boardCategory}, '%')
+				</when>
+				<when test="boardCategory == null and searchKey != null">
+					board_title like CONCAT('%', #{searchKey}, '%')
+				</when>
+				<when test="boardCategory != null and searchKey != null">
+					board_category like CONCAT('%', #{boardCategory}, '%')
+					and board_title like CONCAT('%', #{searchKey}, '%')
+				</when>
+			</choose>
+		</where>
+		group by board.board_no 
+		order by board_no desc
+		limit #{startBoardNo}, #{limit}
+	</select>
+	
+	<select id="getCategoryList" resultType="java.lang.String">
+		select category_name from category
+	</select>
+	
+	<select id="getBoard" resultType="boardVO">
+		select * 
+		from board 
+		join user on board.user_no = user.user_no 
+		where board_no = #{boardNo}
+	</select>
+	
+	<select id="getBoardNo" resultType="java.lang.Integer">
+		select max(board_no)
+		from board
+		where user_no = #{userNo}
+	</select>
+	
+	<select id="getBoardCommentCount" resultType="java.lang.Integer">
+		select count(comment_no)
+		from comment
+		where board_no = #{boardNo}
+	</select>
+	
+	<select id="getCurrentUserWriteBoardNo" resultType="java.lang.Integer">
+		select count(board_no)
+		from board
+		where user_no = #{userNo} AND board_no = #{boardNo}
+	</select>
+	
+	<insert id="addBoard">
+		insert into board(user_no, board_category, board_title, board_content, board_price, board_sell_status, board_wdate)
+		values(#{userNo}, #{boardCategory}, #{boardTitle}, #{boardContent}, #{boardPrice}, "판매중", now())
+	</insert>
+	
+	<update id="modifyBoard">
+		update board
+		set board_sell_status = #{boardSellStatus}, 
+			board_category = #{boardCategory},
+			board_title = #{boardTitle},
+			board_content = #{boardContent},
+			board_price = #{boardPrice}
+		where board_no = #{boardNo}  
+	</update>
+	
+	<delete id="deleteBoard">
+		delete from board
+		where board_no = #{boardNo}
+	</delete>
+	
+	<!-- 댓글 처리 -->
+	<select id="getCommentList" resultType="commentVO">
+		select *
+		from comment
+		join user on comment.user_no = user.user_no
+		where comment.board_no = #{boardNo}
+	</select>
+	
+	<insert id="addComment">
+		insert comment(board_no, user_no, comment_content, comment_wdate)
+		values(#{boardNo}, #{userNo}, #{commentContent}, now())
+	</insert>
+	
+	<update id="modifyComment">
+		update comment
+		set comment_content = #{commentContent}
+		where comment_no = #{commentNo}
+	</update>
+	
+	<delete id="deleteComment">
+		delete from comment
+		where comment_no = #{commentNo}
+	</delete>
+	
+	<select id="getCurrentUserWriteCommentNo" resultType="java.lang.Integer">
+		select count(comment_no)
+		from comment
+		where user_no = #{userNo} AND comment_no = #{commentNo}
+	</select>
+</mapper>
