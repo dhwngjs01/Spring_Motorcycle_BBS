@@ -9,7 +9,7 @@
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	      <property name="driverClassName" value="com.mysql.jdbc.Driver"></property> <!-- 드라이버 정보 -->
 	      <property name="url" value="jdbc:mysql://localhost:3306/spring_motorcycle_bbs?useSSL=false"></property> <!-- 데이터베이스 주소 -->
-	      <property name="username" value="spring_motorcycle_bbs_user"></property> <!-- 데이터베이스 사용자이름 -->
+	      <property name="username" value="spring_motorcycle_bbs"></property> <!-- 데이터베이스 사용자이름 -->
 	      <property name="password" value="201844021"></property> <!-- 데이터베이스 사용자비밀번호 -->
    </bean>
    <!-- MyBatis 설정 -->
