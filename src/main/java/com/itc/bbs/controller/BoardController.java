@@ -127,7 +127,7 @@ public class BoardController {
 					
 					// 파일 테이블과 연결할 게시글 번호
 					// 글쓰기 할 때 로그인 한 유저의 마지막 글이 지금 작성한 글이므로 현재 회원의 번호를 같이 넘긴다
-					int boardNo = bService.getBoardNo((int) session.getAttribute("userNo"));
+					int boardNo = bService.getBoardNo((Integer) session.getAttribute("userNo"));
 					fvo.setBoardNo(boardNo);
 					fvo.setFileName(savedFileFullName);
 					fvo.setFileRealName(originalFileName);
@@ -176,7 +176,7 @@ public class BoardController {
 		}
 		
 		
-		int userNo = (int) session.getAttribute("userNo"); // 세션 사용자 번호
+		int userNo = (Integer) session.getAttribute("userNo"); // 세션 사용자 번호
 		int boardNo = bvo.getBoardNo(); // 수정하려는 글 번호
 		
 		// 현재 계정이 작성한 글인지 검증
@@ -267,7 +267,7 @@ public class BoardController {
 		}
 		
 		// 로그인 한 계정이 쓴 글인지 유효성 검사
-		int sessionUserNo = (int) session.getAttribute("userNo");
+		int sessionUserNo = (Integer) session.getAttribute("userNo");
 		String sessionUserLv = (String) session.getAttribute("userLv");
 		
 		int isCurrentUserWrite = bService.getCurrentUserWriteBoardNo(sessionUserNo, boardNo);

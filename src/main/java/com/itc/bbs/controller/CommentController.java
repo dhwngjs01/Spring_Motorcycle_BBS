@@ -39,7 +39,7 @@ public class CommentController {
 			return map;
 		}
 		
-		int userNo = (int) session.getAttribute("userNo");
+		int userNo = (Integer) session.getAttribute("userNo");
 		vo.setUserNo(userNo);
 	
 		if(bService.addComment(vo) < 1) {
@@ -60,7 +60,7 @@ public class CommentController {
 		}
 		
 		// 로그인 한 계정이 쓴 댓글인지 유효성 검사
-		int sessionUserNo = (int) session.getAttribute("userNo");
+		int sessionUserNo = (Integer) session.getAttribute("userNo");
 		int isCurrentUserWrite = bService.getCurrentUserWriteCommentNo(sessionUserNo, commentNo);
 		
 		if(isCurrentUserWrite > 0) {
@@ -83,7 +83,7 @@ public class CommentController {
 		}
 		
 		// 로그인 한 계정이 쓴 댓글인지 유효성 검사
-		int sessionUserNo = (int) session.getAttribute("userNo");
+		int sessionUserNo = (Integer) session.getAttribute("userNo");
 		String sessionUserLv = (String) session.getAttribute("userLv");
 		
 		int isCurrentUserWrite = bService.getCurrentUserWriteCommentNo(sessionUserNo, commentNo);
