@@ -31,7 +31,7 @@ import com.itc.bbs.service.FileService;
 
 @Controller
 public class BoardController {
-	private static String PATH = "D:/대학/수업/2학년/2학기/7. JSP/Spring Workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/201844021/resources/uploadFiles/";
+	private static String PATH = "C:/Users/user/Documents/Server Programming Workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/Spring_Motorcycle_BBS/resources/";
 
 	@Autowired
 	BoardService bService;
