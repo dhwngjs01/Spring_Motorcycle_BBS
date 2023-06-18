@@ -21,13 +21,13 @@ Spring을 이용한 바이크 판매 장터 사이트
 ## 📋 시스템 구성도
 
 <p align="center">
-    <img src="https://github.com/dhwngjs01/Spring_Motorcycle_BBS/assets/38345593/463ad889-fe19-4ca7-a52c-4bfe3abb7b07" width="80%">
+    <img src="https://github.com/dhwngjs01/Spring_Motorcycle_BBS/assets/38345593/463ad889-fe19-4ca7-a52c-4bfe3abb7b07">
 </p>
 
 ## ⌨ E-R 다이어그램
 
 <p align="center">
-  <img src="https://github.com/dhwngjs01/Spring_Motorcycle_BBS/assets/38345593/b0c70628-b782-4388-aae7-56073d906d47" width="80%">
+  <img src="https://github.com/dhwngjs01/Spring_Motorcycle_BBS/assets/38345593/b0c70628-b782-4388-aae7-56073d906d47">
 </p>
 
 ## 🔍 기능 설명
