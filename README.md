@@ -35,7 +35,7 @@ Spring을 이용한 바이크 판매 장터 사이트
 #### 메인 페이지
 
 - 카테고리, 키워드 검색
-- 무한 스크롤 게시글 목록 추가 로딩
+- 무한 스크롤 게시글 목록 추가 로딩 (Ajax)
 
 #### 로그인
 
@@ -61,6 +61,10 @@ Spring을 이용한 바이크 판매 장터 사이트
 - 카테고리 수정 (지역)
 - 제목, 본문 가격 수정
 - 판매여부 선택
+
+#### 댓글
+
+- 댓글 작성, 수정, 삭제 (Ajax)
 
 ## 🖥 스크린샷
 
@@ -97,3 +101,16 @@ Spring을 이용한 바이크 판매 장터 사이트
 ### 글수정
 
 <img alt="글수정" src="https://github.com/dhwngjs01/Spring_Motorcycle_BBS/assets/38345593/14cd2243-d42c-4005-a996-886051534940">
+
+<hr>
+
+### 글보기
+
+<img alt="글보기" src="https://github.com/dhwngjs01/Spring_Motorcycle_BBS/assets/38345593/e8ef56b9-e804-45ac-9cde-f4c66dd3c989">
+
+<hr>
+
+### 댓글
+
+<img alt="댓글" src="https://github.com/dhwngjs01/Spring_Motorcycle_BBS/assets/38345593/51c9210f-5a12-4b3a-bacd-f0e8aedfe06d">
+<img alt="댓글 수정" src="https://github.com/dhwngjs01/Spring_Motorcycle_BBS/assets/38345593/f0cf00ab-2fd1-49c2-8550-c18ef95a507f">
