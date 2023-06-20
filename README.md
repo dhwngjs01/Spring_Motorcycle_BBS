@@ -4,7 +4,7 @@ Spring을 이용한 바이크 판매 장터 사이트
 
 ## 📖 프로젝트 소개
 
-네이버 카페, 파쏘(Passo)를 참고하여 만든 바이크 판매 장터 사이트입니다.
+<a href="https://cafe.naver.com/bikecargogo" title="네이버 카페로 이동하기" target="_blank">네이버 카페</a>, <a href="http://passo.co.kr/" title="파쏘로 이동하기" target="_blank">파쏘(Passo)</a>를 참고하여 만든 바이크 판매 장터 사이트입니다.
 
 ## ⏰ 개발 기간
 
