@@ -21,7 +21,7 @@ Spring을 이용한 바이크 판매 장터 사이트
 ## 📋 시스템 구성도
 
 <p align="center">
-    <img src="https://github.com/dhwngjs01/Spring_Motorcycle_BBS/assets/38345593/463ad889-fe19-4ca7-a52c-4bfe3abb7b07" width="80%">
+    <img src="https://github.com/dhwngjs01/Spring_Motorcycle_BBS/assets/38345593/ddc1fc07-11f3-43c0-8f1d-192bcf739deb" width="80%">
 </p>
 
 ## ⌨ E-R 다이어그램
